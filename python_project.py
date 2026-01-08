@@ -21,20 +21,6 @@ df_cleaned['CompanyStatus'] = df_cleaned['CompanyStatus'].str.strip().str.title(
 df_cleaned['CompanyClass'] = df_cleaned['CompanyClass'].str.strip().str.title()
 
 
-plt.figure(figsize=(10, 5))
-df_cleaned['CompanyStateCode'].value_counts().head(10).plot(kind='bar', color='skyblue')
-plt.title('Top 10 States with Most Companies')
-plt.ylabel('Number of Companies')
-plt.xlabel('State Code')
-plt.xticks(rotation=45)
-plt.show()
-
-plt.figure(figsize=(10, 5))
-sns.histplot(df_cleaned['AuthorizedCapital'], bins=50, kde=True, color='green')
-plt.title('Distribution of Authorized Capital')
-plt.xlabel('Authorized Capital')
-plt.ylabel('Frequency')
-plt.show()
 
 class_counts = df_cleaned['CompanyClass'].value_counts()
 plt.figure(figsize=(6, 6))
@@ -76,4 +62,18 @@ plt.title('Linear Regression: Actual vs Predicted')
 plt.plot([y.min(), y.max()], [y.min(), y.max()], 'r--')
 plt.show()
 
-mse, r2
+plt.figure(figsize=(10, 5))
+df_cleaned['CompanyStateCode'].value_counts().head(10).plot(kind='bar', color='skyblue')
+plt.title('Top 10 States with Most Companies')
+plt.ylabel('Number of Companies')
+plt.xlabel('State Code')
+plt.xticks(rotation=45)
+plt.show()
+
+plt.figure(figsize=(10, 5))
+sns.histplot(df_cleaned['AuthorizedCapital'], bins=50, kde=True, color='green')
+plt.title('Distribution of Authorized Capital')
+plt.xlabel('Authorized Capital')
+plt.ylabel('Frequency')
+plt.show()
+
